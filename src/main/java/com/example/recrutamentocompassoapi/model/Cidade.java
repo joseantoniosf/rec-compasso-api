@@ -10,15 +10,15 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
 @Table(name = "Cidade")
 @Getter
 @Setter
-@AllArgsConstructor
+@NoArgsConstructor
 public class Cidade {
 
 	@Id
@@ -34,4 +34,9 @@ public class Cidade {
 	@JoinColumn(name = "estado_uf")
 	private Estado estado;
 
+	public Cidade(Long codigo, String nome, Estado estado) {
+		this.codigo = codigo;
+		this.nome = nome;
+		this.estado = estado;
+	}
 }
