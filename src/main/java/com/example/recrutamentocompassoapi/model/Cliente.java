@@ -38,7 +38,8 @@ public class Cliente {
     private String sexo;
     
 	@NotNull
-    private Date data_nasc;
+	@Column(name = "data_nasc")
+    private Date dataNascimento;
     
 	@Size(max = 3)
     private int idade;

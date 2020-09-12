@@ -26,7 +26,7 @@ public class Cidade {
 	private Long codigo;
 	
 	@NotNull
-	@Size(max = 100)
+	@Size(min = 3, max = 100)
 	private String nome;
 	
 	@NotNull
