@@ -13,15 +13,15 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
 @Table(name = "Cliente")
 @Getter
 @Setter
-@AllArgsConstructor
+@NoArgsConstructor
 public class Cliente {
 
 	@Id
@@ -41,11 +41,21 @@ public class Cliente {
 	@Column(name = "data_nasc")
     private Date dataNascimento;
     
-	@Size(max = 3)
     private int idade;
     
 	@NotNull
 	@ManyToOne
 	@JoinColumn(name = "cidade_codigo")
     private Cidade cidade;
+	
+	
+	public Cliente(Long codigo, String nomeCompleto, String sexo, Date dataNascimento,
+			int idade, Cidade cidade) {
+		this.codigo = codigo;
+		this.nomeCompleto = nomeCompleto;
+		this.sexo = sexo;
+		this.dataNascimento = dataNascimento;
+		this.idade = idade;
+		this.cidade = cidade;
+	}
 }

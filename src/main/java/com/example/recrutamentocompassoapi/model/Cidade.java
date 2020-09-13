@@ -34,6 +34,10 @@ public class Cidade {
 	@JoinColumn(name = "estado_uf")
 	private Estado estado;
 
+	public Cidade(Long codigo) {
+		this.codigo = codigo;
+	}
+	
 	public Cidade(Long codigo, String nome, Estado estado) {
 		this.codigo = codigo;
 		this.nome = nome;
